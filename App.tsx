@@ -1,6 +1,6 @@
 import React from 'react';
-import { ExerciseLibraryScreen } from './src/screens/ExerciseLibraryScreen';
+import { AppNavigator } from './src/navigation/AppNavigator';
 
 export default function App() {
-  return <ExerciseLibraryScreen />;
+  return <AppNavigator />;
 }

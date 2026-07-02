@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import type { Exercise } from '../types';
 import { stripHtml } from '../utils/html';
 
 interface Props {
   exercise: Exercise;
+  onPress?: () => void;
 }
 
 function getEnglishTranslation(exercise: Exercise) {
   return exercise.translations.find(t => t.language === 2);
 }
 
-export function ExerciseCard({ exercise }: Props) {
+export function ExerciseCard({ exercise, onPress }: Props) {
   const translation = getEnglishTranslation(exercise);
   const name = translation?.name ?? `Exercice #${exercise.id}`;
   const description = translation?.description ? stripHtml(translation.description) : '';
@@ -19,7 +20,7 @@ export function ExerciseCard({ exercise }: Props) {
   const secondaryMuscles = exercise.muscles_secondary.map(m => m.name_en).filter(Boolean);
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={onPress ? 0.7 : 1}>
       <View style={styles.header}>
         <Text style={styles.name} numberOfLines={2}>{name}</Text>
         <View style={styles.badge}>
@@ -47,7 +48,7 @@ export function ExerciseCard({ exercise }: Props) {
           {description}
         </Text>
       )}
-    </View>
+    </TouchableOpacity>
   );
 }
 

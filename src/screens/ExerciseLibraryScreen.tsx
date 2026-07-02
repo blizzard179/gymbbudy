@@ -14,6 +14,7 @@ import { fetchCategories, fetchExercises } from '../api/wger';
 import { SearchBar } from '../components/SearchBar';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { ExerciseCard } from '../components/ExerciseCard';
+import { ExerciseDetailModal } from '../components/ExerciseDetailModal';
 
 const PAGE_SIZE = 20;
 const SEARCH_LIMIT = 100;
@@ -35,6 +36,7 @@ export function ExerciseLibraryScreen() {
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
 
   // Debounce search input
   useEffect(() => {
@@ -180,7 +182,9 @@ export function ExerciseLibraryScreen() {
           <FlatList
             data={displayedExercises}
             keyExtractor={item => String(item.id)}
-            renderItem={({ item }) => <ExerciseCard exercise={item} />}
+            renderItem={({ item }) => (
+              <ExerciseCard exercise={item} onPress={() => setSelectedExercise(item)} />
+            )}
             onEndReached={handleLoadMore}
             onEndReachedThreshold={0.4}
             ListFooterComponent={renderFooter}
@@ -190,6 +194,11 @@ export function ExerciseLibraryScreen() {
           />
         )}
       </View>
+
+      <ExerciseDetailModal
+        exercise={selectedExercise}
+        onClose={() => setSelectedExercise(null)}
+      />
     </SafeAreaView>
   );
 }
