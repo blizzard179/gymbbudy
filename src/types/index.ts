@@ -58,3 +58,27 @@ export interface Program {
   exercises: ProgramExercise[];
   createdAt: number;
 }
+
+export interface CompletedSet {
+  actualReps: string;
+  actualWeight: string;
+  completedAt: number;
+}
+
+export interface ExerciseLog {
+  exercise: Exercise;
+  targetSets: string;
+  targetReps: string;
+  targetWeight: string;
+  sets: CompletedSet[];
+}
+
+export interface WorkoutSession {
+  id: string;
+  programId: string;
+  programName: string;
+  startedAt: number;
+  finishedAt: number;
+  durationSeconds: number;
+  logs: ExerciseLog[];
+}

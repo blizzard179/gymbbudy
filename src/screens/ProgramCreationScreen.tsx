@@ -19,6 +19,7 @@ import type { Exercise, ProgramExercise, Program } from '../types';
 import { fetchExercises } from '../api/wger';
 import { usePrograms } from '../context/ProgramContext';
 import { SearchBar } from '../components/SearchBar';
+import { WorkoutSessionScreen } from './WorkoutSessionScreen';
 
 function getEnglishName(exercise: Exercise): string {
   return exercise.translations.find(t => t.language === 2)?.name ?? `Exercise #${exercise.id}`;
@@ -26,7 +27,7 @@ function getEnglishName(exercise: Exercise): string {
 
 // ─── Carte d'un programme sauvegardé ───────────────────────────────────────
 
-function ProgramCard({ program }: { program: Program }) {
+function ProgramCard({ program, onStart }: { program: Program; onStart: () => void }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -62,6 +63,10 @@ function ProgramCard({ program }: { program: Program }) {
           ))}
         </View>
       )}
+
+      <TouchableOpacity style={styles.startBtn} onPress={onStart} activeOpacity={0.8}>
+        <Text style={styles.startBtnText}>Démarrer la séance</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -71,6 +76,7 @@ function ProgramCard({ program }: { program: Program }) {
 export function ProgramCreationScreen() {
   const { programs, saveProgram } = usePrograms();
   const [view, setView] = useState<'list' | 'create'>('list');
+  const [activeProgram, setActiveProgram] = useState<Program | null>(null);
 
   // Formulaire de création
   const [programName, setProgramName] = useState('');
@@ -210,7 +216,9 @@ export function ProgramCreationScreen() {
                 </TouchableOpacity>
               </View>
             ) : (
-              programs.map(p => <ProgramCard key={p.id} program={p} />)
+              programs.map(p => (
+                <ProgramCard key={p.id} program={p} onStart={() => setActiveProgram(p)} />
+              ))
             )}
           </ScrollView>
         )}
@@ -359,6 +367,21 @@ export function ProgramCreationScreen() {
           )}
         </SafeAreaView>
       </Modal>
+
+      {/* Modal de séance */}
+      <Modal
+        visible={activeProgram !== null}
+        animationType="slide"
+        presentationStyle="fullScreen"
+        onRequestClose={() => setActiveProgram(null)}
+      >
+        {activeProgram && (
+          <WorkoutSessionScreen
+            program={activeProgram}
+            onClose={() => setActiveProgram(null)}
+          />
+        )}
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -494,6 +517,19 @@ const styles = StyleSheet.create({
     color: '#f5c842',
     fontSize: 13,
     fontWeight: '600',
+  },
+  startBtn: {
+    backgroundColor: '#f5c842',
+    margin: 12,
+    marginTop: 0,
+    borderRadius: 10,
+    paddingVertical: 12,
+    alignItems: 'center',
+  },
+  startBtnText: {
+    color: '#000',
+    fontSize: 14,
+    fontWeight: '800',
   },
 
   // Empty state
