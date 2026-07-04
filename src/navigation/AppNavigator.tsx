@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
 import { ExerciseLibraryScreen } from '../screens/ExerciseLibraryScreen';
 import { ProgramCreationScreen } from '../screens/ProgramCreationScreen';
+import { HistoryScreen } from '../screens/HistoryScreen';
 import { ProgramProvider } from '../context/ProgramContext';
 
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,14 @@ export function AppNavigator() {
           options={{
             tabBarLabel: 'Programme',
             tabBarIcon: ({ focused }) => <TabIcon label="≡" active={focused} />,
+          }}
+        />
+        <Tab.Screen
+          name="History"
+          component={HistoryScreen}
+          options={{
+            tabBarLabel: 'Historique',
+            tabBarIcon: ({ focused }) => <TabIcon label="↺" active={focused} />,
           }}
         />
       </Tab.Navigator>
