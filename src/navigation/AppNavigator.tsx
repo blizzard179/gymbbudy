@@ -5,6 +5,7 @@ import { Text } from 'react-native';
 import { ExerciseLibraryScreen } from '../screens/ExerciseLibraryScreen';
 import { ProgramCreationScreen } from '../screens/ProgramCreationScreen';
 import { HistoryScreen } from '../screens/HistoryScreen';
+import { ProgressScreen } from '../screens/ProgressScreen';
 import { ProgramProvider } from '../context/ProgramContext';
 
 const Tab = createBottomTabNavigator();
@@ -57,6 +58,14 @@ export function AppNavigator() {
           options={{
             tabBarLabel: 'Historique',
             tabBarIcon: ({ focused }) => <TabIcon label="↺" active={focused} />,
+          }}
+        />
+        <Tab.Screen
+          name="Progress"
+          component={ProgressScreen}
+          options={{
+            tabBarLabel: 'Progrès',
+            tabBarIcon: ({ focused }) => <TabIcon label="↗" active={focused} />,
           }}
         />
       </Tab.Navigator>
