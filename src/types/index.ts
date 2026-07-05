@@ -82,3 +82,23 @@ export interface WorkoutSession {
   durationSeconds: number;
   logs: ExerciseLog[];
 }
+
+export interface HistoryExerciseLog {
+  exerciseId: number;
+  exerciseName: string;
+  category: string;
+  targetSets: string;
+  targetReps: string;
+  targetWeight: string;
+  sets: CompletedSet[];
+}
+
+export interface HistorySession {
+  id: string;
+  programId: string;
+  programName: string;
+  startedAt: number;
+  finishedAt: number;
+  durationSeconds: number;
+  logs: HistoryExerciseLog[];
+}

@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import type { Program, CompletedSet, WorkoutSession } from '../types';
 import { usePrograms } from '../context/ProgramContext';
+import { insertSession } from '../api/sessions';
 
 interface Props {
   program: Program;
@@ -122,6 +123,7 @@ export function WorkoutSessionScreen({ program, onClose }: Props) {
     if (isLastSet && isLastExercise) {
       const session = buildSession(newLogs);
       saveSession(session);
+      insertSession(session).catch(() => {});
       setFinishedSession(session);
       setSessionDone(true);
     } else if (isLastSet) {
