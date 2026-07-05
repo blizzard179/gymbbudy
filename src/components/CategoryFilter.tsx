@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     borderColor: '#2c2c2e',
   },
   chipActive: {
-    backgroundColor: '#f5c842',
-    borderColor: '#f5c842',
+    backgroundColor: '#FF6224',
+    borderColor: '#FF6224',
   },
   label: {
     color: '#888',

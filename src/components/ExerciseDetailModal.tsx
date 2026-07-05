@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   closeBtn: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 15,
     fontWeight: '600',
   },
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   badge: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 5,
@@ -365,8 +365,8 @@ const styles = StyleSheet.create({
     borderColor: '#3a3a3c',
   },
   programChipActive: {
-    backgroundColor: '#f5c842',
-    borderColor: '#f5c842',
+    backgroundColor: '#FF6224',
+    borderColor: '#FF6224',
   },
   programChipText: {
     color: '#888',
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   fieldInput: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
@@ -410,7 +410,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c2c2e',
   },
   addBtn: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: 'center',

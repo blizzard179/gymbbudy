@@ -393,7 +393,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   exerciseProgress: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 13,
     fontWeight: '600',
     marginTop: 2,
@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
     lineHeight: 28,
   },
   exBadge: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 5,
@@ -460,12 +460,12 @@ const styles = StyleSheet.create({
     borderColor: '#3a3a3c',
   },
   dotDone: {
-    backgroundColor: '#f5c842',
-    borderColor: '#f5c842',
+    backgroundColor: '#FF6224',
+    borderColor: '#FF6224',
   },
   dotActive: {
     backgroundColor: 'transparent',
-    borderColor: '#f5c842',
+    borderColor: '#FF6224',
     borderWidth: 2,
   },
   dotsLabel: {
@@ -505,7 +505,7 @@ const styles = StyleSheet.create({
   },
   restBarFill: {
     height: '100%',
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 2,
   },
   restActions: {
@@ -531,7 +531,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   restAddText: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 14,
     fontWeight: '700',
   },
@@ -596,7 +596,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   inputField: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 32,
     fontWeight: '800',
     textAlign: 'center',
@@ -607,7 +607,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c2c2e',
   },
   validateBtn: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 12,
     paddingVertical: 16,
     alignItems: 'center',
@@ -657,7 +657,7 @@ const styles = StyleSheet.create({
   summaryEmoji: {
     fontSize: 48,
     marginBottom: 12,
-    color: '#f5c842',
+    color: '#FF6224',
     fontWeight: '800',
   },
   summaryTitle: {
@@ -667,7 +667,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   summaryDuration: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 18,
     fontWeight: '700',
     marginBottom: 8,
@@ -699,7 +699,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   summaryExCount: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 13,
     fontWeight: '600',
   },
@@ -721,7 +721,7 @@ const styles = StyleSheet.create({
   },
   summaryCloseBtn: {
     marginTop: 24,
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 20,
     paddingHorizontal: 32,
     paddingVertical: 14,

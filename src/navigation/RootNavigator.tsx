@@ -26,7 +26,7 @@ export function RootNavigator() {
     <NavigationContainer>
       {loading ? (
         <View style={styles.loading}>
-          <ActivityIndicator size="large" color="#f5c842" />
+          <ActivityIndicator size="large" color="#FF6224" />
         </View>
       ) : isAuthenticated ? (
         <ProgramProvider>

@@ -331,7 +331,7 @@ export function ProgramCreationScreen() {
 
           {pickerLoading ? (
             <View style={styles.pickerLoader}>
-              <ActivityIndicator color="#f5c842" size="large" />
+              <ActivityIndicator color="#FF6224" size="large" />
             </View>
           ) : (
             <FlatList
@@ -408,7 +408,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   saveBtn: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 8,
@@ -514,12 +514,12 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   programExDetail: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 13,
     fontWeight: '600',
   },
   startBtn: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     margin: 12,
     marginTop: 0,
     borderRadius: 10,
@@ -552,7 +552,7 @@ const styles = StyleSheet.create({
   },
   emptyBtn: {
     marginTop: 10,
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 20,
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -630,7 +630,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   fieldInput: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
@@ -673,7 +673,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   modalClose: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 15,
     fontWeight: '600',
   },
@@ -716,13 +716,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   pickerRowPlus: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 22,
     fontWeight: '300',
     lineHeight: 24,
   },
   pickerRowCheck: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 16,
     fontWeight: '700',
   },

@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   badge: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 4,

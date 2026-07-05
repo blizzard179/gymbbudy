@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
   logo: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 38,
     fontWeight: '900',
     letterSpacing: -1,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
 
   btn: {
-    backgroundColor: '#f5c842',
+    backgroundColor: '#FF6224',
     borderRadius: 14,
     paddingVertical: 16,
     alignItems: 'center',
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   switchLink: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 14,
     fontWeight: '700',
   },

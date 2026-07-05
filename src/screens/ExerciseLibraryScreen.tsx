@@ -117,7 +117,7 @@ export function ExerciseLibraryScreen() {
     if (loadingMore) {
       return (
         <View style={styles.footer}>
-          <ActivityIndicator color="#f5c842" />
+          <ActivityIndicator color="#FF6224" />
         </View>
       );
     }
@@ -170,7 +170,7 @@ export function ExerciseLibraryScreen() {
 
         {loading ? (
           <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#f5c842" />
+            <ActivityIndicator size="large" color="#FF6224" />
             <Text style={styles.loadingText}>Chargement...</Text>
           </View>
         ) : error ? (

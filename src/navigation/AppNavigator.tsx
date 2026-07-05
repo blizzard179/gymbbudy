@@ -8,8 +8,8 @@ import { ProgressScreen } from '../screens/ProgressScreen';
 
 const Tab = createBottomTabNavigator();
 
-function TabIcon({ label, active }: { label: string; active: boolean }) {
-  return <Text style={{ fontSize: 20, opacity: active ? 1 : 0.4 }}>{label}</Text>;
+function TabIcon({ label, color }: { label: string; color: string }) {
+  return <Text style={{ fontSize: 22, color }}>{label}</Text>;
 }
 
 export function AppNavigator() {
@@ -21,11 +21,11 @@ export function AppNavigator() {
           backgroundColor: '#111',
           borderTopColor: '#1c1c1e',
           borderTopWidth: 1,
-          height: 60,
+          height: 62,
           paddingBottom: 8,
         },
-        tabBarActiveTintColor: '#f5c842',
-        tabBarInactiveTintColor: '#444',
+        tabBarActiveTintColor: '#FF6224',
+        tabBarInactiveTintColor: '#666',
         tabBarLabelStyle: {
           fontSize: 11,
           fontWeight: '600',
@@ -37,7 +37,7 @@ export function AppNavigator() {
         component={ExerciseLibraryScreen}
         options={{
           tabBarLabel: 'Exercices',
-          tabBarIcon: ({ focused }) => <TabIcon label="◎" active={focused} />,
+          tabBarIcon: ({ color }) => <TabIcon label="◎" color={color} />,
         }}
       />
       <Tab.Screen
@@ -45,7 +45,7 @@ export function AppNavigator() {
         component={ProgramCreationScreen}
         options={{
           tabBarLabel: 'Programme',
-          tabBarIcon: ({ focused }) => <TabIcon label="≡" active={focused} />,
+          tabBarIcon: ({ color }) => <TabIcon label="≡" color={color} />,
         }}
       />
       <Tab.Screen
@@ -53,7 +53,7 @@ export function AppNavigator() {
         component={HistoryScreen}
         options={{
           tabBarLabel: 'Historique',
-          tabBarIcon: ({ focused }) => <TabIcon label="↺" active={focused} />,
+          tabBarIcon: ({ color }) => <TabIcon label="↺" color={color} />,
         }}
       />
       <Tab.Screen
@@ -61,7 +61,7 @@ export function AppNavigator() {
         component={ProgressScreen}
         options={{
           tabBarLabel: 'Progrès',
-          tabBarIcon: ({ focused }) => <TabIcon label="↗" active={focused} />,
+          tabBarIcon: ({ color }) => <TabIcon label="↗" color={color} />,
         }}
       />
     </Tab.Navigator>

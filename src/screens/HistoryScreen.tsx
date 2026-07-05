@@ -211,7 +211,7 @@ export function HistoryScreen() {
 
       {loading ? (
         <View style={styles.center}>
-          <ActivityIndicator size="large" color="#f5c842" />
+          <ActivityIndicator size="large" color="#FF6224" />
         </View>
       ) : error ? (
         <View style={styles.center}>
@@ -233,8 +233,8 @@ export function HistoryScreen() {
               <RefreshControl
                 refreshing={refreshing}
                 onRefresh={() => load(true)}
-                tintColor="#f5c842"
-                colors={['#f5c842']}
+                tintColor="#FF6224"
+                colors={['#FF6224']}
               />
             ) : undefined
           }
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   cardDuration: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 13,
     fontWeight: '700',
   },
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   setValue: { color: '#ccc', fontSize: 13, fontWeight: '600' },
-  setWeight: { color: '#f5c842', fontSize: 13, fontWeight: '600' },
+  setWeight: { color: '#FF6224', fontSize: 13, fontWeight: '600' },
 
   // States
   center: {

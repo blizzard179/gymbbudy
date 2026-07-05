@@ -136,8 +136,8 @@ function LineChart({ data, width }: { data: ChartPoint[]; width: number }) {
     <Svg width={width} height={CHART_H}>
       <Defs>
         <LinearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0%" stopColor="#f5c842" stopOpacity="0.22" />
-          <Stop offset="100%" stopColor="#f5c842" stopOpacity="0" />
+          <Stop offset="0%" stopColor="#FF6224" stopOpacity="0.22" />
+          <Stop offset="100%" stopColor="#FF6224" stopOpacity="0" />
         </LinearGradient>
       </Defs>
 
@@ -181,7 +181,7 @@ function LineChart({ data, width }: { data: ChartPoint[]; width: number }) {
       {/* Line */}
       <Path
         d={linePath}
-        stroke="#f5c842"
+        stroke="#FF6224"
         strokeWidth={2.5}
         fill="none"
         strokeLinecap="round"
@@ -190,7 +190,7 @@ function LineChart({ data, width }: { data: ChartPoint[]; width: number }) {
 
       {/* Data points */}
       {pts.map((pt, i) => (
-        <Circle key={i} cx={pt.x} cy={pt.y} r={4.5} fill="#f5c842" />
+        <Circle key={i} cx={pt.x} cy={pt.y} r={4.5} fill="#FF6224" />
       ))}
 
       {/* X labels */}
@@ -397,8 +397,8 @@ const styles = StyleSheet.create({
     borderColor: '#2c2c2e',
   },
   chipActive: {
-    backgroundColor: '#f5c842',
-    borderColor: '#f5c842',
+    backgroundColor: '#FF6224',
+    borderColor: '#FF6224',
   },
   chipText: {
     color: '#888',

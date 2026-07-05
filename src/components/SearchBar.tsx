@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   icon: {
-    color: '#f5c842',
+    color: '#FF6224',
     fontSize: 12,
     fontWeight: '700',
     fontFamily: 'monospace',
