@@ -18,6 +18,7 @@ function toHistoryLog(log: WorkoutSession['logs'][number]): HistoryExerciseLog {
 
 export async function insertSession(session: WorkoutSession): Promise<void> {
   if (!supabase) return;
+  const { data: { session: authSession } } = await supabase.auth.getSession();
   const { error } = await supabase.from('workout_sessions').insert({
     id: session.id,
     program_id: session.programId,
@@ -26,6 +27,7 @@ export async function insertSession(session: WorkoutSession): Promise<void> {
     finished_at: session.finishedAt,
     duration_seconds: session.durationSeconds,
     logs: session.logs.map(toHistoryLog),
+    user_id: authSession?.user?.id ?? null,
   });
   if (error) throw error;
 }

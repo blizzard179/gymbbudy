@@ -17,6 +17,7 @@ import type { HistorySession } from '../types';
 import { fetchSessions } from '../api/sessions';
 import { isSupabaseConfigured } from '../lib/supabase';
 import { usePrograms } from '../context/ProgramContext';
+import { useAuth } from '../context/AuthContext';
 
 // ─── Types unifiés pour l'affichage ─────────────────────────────────────────
 
@@ -154,6 +155,7 @@ function SessionCard({ session }: { session: DisplaySession }) {
 
 export function HistoryScreen() {
   const { sessions: localSessions } = usePrograms();
+  const { signOut, user } = useAuth();
 
   const [remoteSessions, setRemoteSessions] = useState<DisplaySession[]>([]);
   const [loading, setLoading] = useState(false);
@@ -187,17 +189,22 @@ export function HistoryScreen() {
       <StatusBar barStyle="light-content" backgroundColor="#111" />
 
       <View style={styles.titleRow}>
-        <Text style={styles.title}>Historique</Text>
-        <View style={styles.titleRight}>
-          {isSupabaseConfigured && (
-            <View style={styles.cloudBadge}>
-              <Text style={styles.cloudBadgeText}>☁ Supabase</Text>
-            </View>
+        <View>
+          <Text style={styles.title}>Historique</Text>
+          {user?.email && (
+            <Text style={styles.userEmail} numberOfLines={1}>{user.email}</Text>
           )}
+        </View>
+        <View style={styles.titleRight}>
           {sessions.length > 0 && (
             <Text style={styles.counter}>
               {sessions.length} séance{sessions.length > 1 ? 's' : ''}
             </Text>
+          )}
+          {isSupabaseConfigured && (
+            <TouchableOpacity onPress={signOut} style={styles.logoutBtn} activeOpacity={0.7}>
+              <Text style={styles.logoutText}>Déco.</Text>
+            </TouchableOpacity>
           )}
         </View>
       </View>
@@ -266,27 +273,31 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '800',
   },
+  userEmail: {
+    color: '#444',
+    fontSize: 12,
+    marginTop: 2,
+  },
   titleRight: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
-  },
-  cloudBadge: {
-    backgroundColor: '#1c2a1c',
-    borderRadius: 8,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderWidth: 1,
-    borderColor: '#2a4a2a',
-  },
-  cloudBadgeText: {
-    color: '#4caf78',
-    fontSize: 11,
-    fontWeight: '700',
+    gap: 10,
   },
   counter: {
     color: '#555',
     fontSize: 13,
+  },
+  logoutBtn: {
+    borderWidth: 1,
+    borderColor: '#2c2c2e',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  logoutText: {
+    color: '#555',
+    fontSize: 12,
+    fontWeight: '600',
   },
   list: {
     paddingHorizontal: 16,
